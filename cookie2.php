@@ -16,8 +16,10 @@
     if (isset($_COOKIE['visite'])) {
       $v = $_COOKIE['visite'];
       $visite = $v+1;
-      setcookie('visite','','1','/');
+      setcookie('visite','',time() + 3600,'/');
       setcookie('visite',"$visite");
+    } else{
+      $v = "<p>Premiere visite</p>";
     }
     ?>
     Nombre de visite : <?=$v?> <br>
