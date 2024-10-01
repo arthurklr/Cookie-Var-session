@@ -1,7 +1,6 @@
 <?php
   setcookie('prenom', 'Rémi', time()+3600);
   setcookie('pays', 'France', time()+365*24*3600);
-  setcookie('prenom', '', time()-3600, '/');
 ?>
 <!DOCTYPE html>
 <html lang="fr">
