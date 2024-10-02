@@ -12,17 +12,15 @@
     Pays : <?= $_COOKIE['pays'] ?><br>
 
     <?php
-    var_dump($_COOKIE['visite']);
     if (isset($_COOKIE['visite'])) {
       $v = $_COOKIE['visite'];
-      $visite = $v+1;
-      setcookie('visite','',time() + 3600,'/');
-      setcookie('visite',"$visite");
-    } else{
+      $v += 1;
+      setcookie('visite', "$v", time() + 3600);
+    } else {
       $v = "<p>Premiere visite</p>";
     }
     ?>
-    Nombre de visite : <?=$v?> <br>
+    Nombre de visite : <?= $v ?> <br>
   </p>
   <a href="cookie1.php">Vers cookie1</a>
 </body>
