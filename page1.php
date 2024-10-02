@@ -18,10 +18,11 @@ $_SESSION['age'] = 25;
   <p>
     Bonjour
   </p>
-  <p><?= 'Le pays est : ' . $_SESSION['pays'] ?></p>
-  <a href="page2.php" title="Lien vers page2.php">Lien vers page2</a>
-  <a href="page3.php" title="Lien vers page3.php">Lien vers page3</a>
-  <a href="page4.php" title="Lien vers page4.php">Lien vers page4</a>
-</body>
+  <p>Le pays est : <?php if (isset($_SESSION['pays']))
+    echo $_SESSION['pays'] ?></p>
+    <a href="page2.php" title="Lien vers page2.php">Lien vers page2</a>
+    <a href="page3.php" title="Lien vers page3.php">Lien vers page3</a>
+    <a href="page4.php" title="Lien vers page4.php">Lien vers page4</a>
+  </body>
 
-</html>
+  </html>
