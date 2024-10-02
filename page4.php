@@ -3,6 +3,7 @@ session_start();
 
 if (isset($_SESSION)) {
     session_destroy();
+    setcookie(session_name(), '', 1, '/');
     echo "La session a été fermée";
 } else {
     echo "Aucune session active à fermer";
