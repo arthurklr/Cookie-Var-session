@@ -1,3 +1,11 @@
+<?php
+if (isset($_COOKIE["visite"]))
+  setcookie('visite', ++$_COOKIE["visite"], time() + 3600);
+else
+  setcookie("visite", 1, time() + 365 * 24 * 3600);
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -13,14 +21,11 @@
 
     <?php
     if (isset($_COOKIE['visite'])) {
-      $v = $_COOKIE['visite'];
-      $v += 1;
-      setcookie('visite', "$v", time() + 3600);
+      echo "merci pour votre " . $_COOKIE["visite"] . "<sup>ème</sup> visite !";
     } else {
-      $v = "<p>Premiere visite</p>";
+      echo "merci pour votre première visite";
     }
     ?>
-    Nombre de visite : <?= $v ?> <br>
   </p>
   <a href="cookie1.php">Vers cookie1</a>
 </body>
